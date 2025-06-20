@@ -10,7 +10,12 @@ quarkus:
       enabled: false
 
   http:
-    port: 8080
+    cors:
+      ~: true
+      methods: GET,POST,PUT,DELETE,OPTIONS
+      origins: http://localhost:5173
+      headers: Accept,Authorization,Content-Type
+      exposed-headers: Location
 
   resteasy-reactive:
     path: /api

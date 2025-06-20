@@ -45,7 +45,7 @@ public class CartaoCreditoRepository {
 
     public List<CartaoCredito> listarTodos() {
         List<CartaoCredito> lista = new ArrayList<>();
-        String sql = "SELECT * FROM cartoes_credito ORDER BY id DESC";
+        String sql = "SELECT * FROM cartoes_credito ORDER BY id ASC";
 
         try (Connection conn = dataSource.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
