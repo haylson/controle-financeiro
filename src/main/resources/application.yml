@@ -1,0 +1,28 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: postgres
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/postgres
+      driver: org.postgresql.Driver
+    devservices:
+      enabled: false
+
+  http:
+    port: 8080
+
+  resteasy-reactive:
+    path: /api
+
+  smallrye-openapi:
+    path: /openapi
+    info:
+      title: API de Controle Financeiro
+      version: "1.0.0"
+      description: API REST para gerenciar cartões e despesas pessoais.
+
+  log:
+    category:
+      "com.br.hmdevelop.financeiro":
+        level: DEBUG
