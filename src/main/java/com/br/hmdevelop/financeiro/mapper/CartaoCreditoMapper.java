@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper(componentModel = "jakarta")
+@Mapper(componentModel = "cdi")
 public interface CartaoCreditoMapper {
 
     CartaoCreditoDTO toDTO(CartaoCredito entity);

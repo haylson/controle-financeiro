@@ -19,7 +19,11 @@ public class ConstraintViolationExceptionMapper implements ExceptionMapper<Const
         Set<ConstraintViolation<?>> violations = exception.getConstraintViolations();
 
         for (ConstraintViolation<?> v : violations) {
-            erros.put(v.getPropertyPath().toString(), v.getMessage());
+            String campo = v.getPropertyPath().toString();
+            if (campo.contains(".")) {
+                campo = campo.substring(campo.lastIndexOf('.') + 1);
+            }
+            erros.put(campo, v.getMessage());
         }
 
         return Response.status(Response.Status.BAD_REQUEST)
